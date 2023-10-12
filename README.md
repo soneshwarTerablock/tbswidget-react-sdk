@@ -1,13 +1,13 @@
-# example-library-test
+# tbswidget-react-sdk
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/example-library-test.svg)](https://www.npmjs.com/package/example-library-test) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/tbswidget-react-sdk.svg)](https://www.npmjs.com/package/tbswidget-react-sdk) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save tbswidget-react-sdk
+npm install --save-dev tbswidget-react-sdk
 ```
 
 ## Usage
