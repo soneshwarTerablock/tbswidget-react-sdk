@@ -7,24 +7,22 @@
 ## Install
 
 ```bash
-npm install --save example-library-test
+npm install --save tbswidget-react-sdk
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
 
-import MyComponent from 'example-library-test'
-import 'example-library-test/dist/index.css'
+import { TBSwidget } from "tbswidget-react-sdk";
+import 'tbswidget-react-sdk/dist/index.css';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return <TBSwidget />
 }
 ```
 
 ## License
 
-MIT © [Sudhanshu894](https://github.com/Sudhanshu894)
+MIT © [soneshwarTerablock](https://github.com/soneshwarTerablock)
