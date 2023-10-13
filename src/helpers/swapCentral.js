@@ -11,8 +11,8 @@ import { crossSwapAbi } from "../assets/abis/crossSwapAbi";
 
 
 const ParseEthUtil = (amount, decimal) => {
-    let response = Number(amount) * 10 ** decimal;
-    return parseInt(response);
+  let response = Number(amount) * 10 ** decimal;
+  return parseInt(response);
 };
 
 
@@ -127,18 +127,15 @@ const getBridgeTxn = async (amount, networkData, selectedNetwork, selectedToNetw
           network?.id
       );
       txData = txData?.data;
-      // console.log("2", txData);
       if (txData) {
         let finalTxData = uniswapInterface?.encodeFunctionData("swap", [txData.message.calldata, networkData?.account]);
         const feeData = await Provider.getFeeData();
         let gasFees;
-        // console.log("GasPrices before: -----------",feeData.gasPrice._hex);
         if (network.id == 56){
           gasFees = Number(feeData.gasPrice._hex);
         }else {
           gasFees = Number(feeData.gasPrice._hex) + (Number(feeData.gasPrice._hex) * (15/100));
         }
-        // console.log("GasPrices after: -----------", gasFees)
         let tx = {
           to: networkData?.proxy,
           data: finalTxData,
@@ -159,11 +156,9 @@ const getBridgeTxn = async (amount, networkData, selectedNetwork, selectedToNetw
     try{
       // console.log("In getTxn: ");
       const {selectedNetwork, selectedToNetwork} = network;
-      const Provider = new ethers.providers.JsonRpcProvider(selectedNetwork?.rpc_url);
       const cross_swap = new ethers.utils.Interface(crossSwapAbi);
 
       const usdt = coins?.filter((el) => el?.symbol === "USDT")[0];
-      console.log("1");
       let txData = await axios.get(
         swapAPI +
           "?buyToken=" +

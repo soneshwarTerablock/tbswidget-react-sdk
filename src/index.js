@@ -1,8 +1,10 @@
 import React, {Fragment} from 'react'
 import "./tailwind.css";
 import Swidget from './components/Sdk';
+import { getSwapTxnData, getAllTokens, getCrossChainTxnData } from './helpers/txnData';
 
-export const TBSwidget = (props) => {
+
+const TBSwidget = (props) => {
   const toChains = [1,56,137];
   const background = "https://st5.depositphotos.com/11965080/64694/i/450/depositphotos_646946936-stock-photo-abstract-neon-background-colorful-beams.jpg";
   const style = {
@@ -29,4 +31,8 @@ export const TBSwidget = (props) => {
       <Swidget text={props?.text ? props?.text : text} color={props?.color ? props?.color : color} fromChains={props?.fromChains ? props.fromChains : fromChains} toChains={props?.toChains ? props?.toChains : toChains} fromTokens={props?.fromTokens ? props?.fromTokens : fromtokenIds} toTokens={props?.toTokens ? props?.toTokens : toTokenIds} styles={props?.style ? props?.style : style} background={props?.background ? props?.background : background} userAddress={props?.userAddress ? props.userAddress : null} bgStyles={props.bgStyles ? props?.bgStyles : bgStyles} provider={props?.provider ? props?.provider : undefined}/>
     </React.Fragment>
   )
+}
+
+export const TB_SDK = {
+  TBSwidget, getAllTokens, getSwapTxnData, getCrossChainTxnData
 }

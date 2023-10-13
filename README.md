@@ -15,11 +15,11 @@ npm install --save-dev tbswidget-react-sdk
 ```jsx
 import React, { Fragment } from 'react'
 
-import { TBSwidget } from "tbswidget-react-sdk";
+import { TB_SDK } from "tbswidget-react-sdk";
 import 'tbswidget-react-sdk/dist/index.css';
 
 const App = () => {
-  return <TBSwidget />
+  return <TB_SDK.TBSwidget />
 }
 ```
 
@@ -58,6 +58,62 @@ You can use the following props to configure the SDK component:
   background={background}       // Optional: URL or any relative path for background
   bgStyles={bgStyles}           // Optional: styles for the main container wrapping the SDK component
 />
+```
+
+
+## Function Documentation
+
+This README provides documentation for three JavaScript functions related to cryptocurrency transactions. These functions are primarily used for obtaining transaction data for swaps and cross-chain transactions. 
+
+### `getSwapTxnData`
+
+The `getSwapTxnData` function is responsible for retrieving transaction data for a swap operation. It takes the following parameters:
+
+- `fromCoin`: The token you are swapping from.
+- `toCoin`: The token you are swapping to.
+- `network`: The network on which the swap is taking place.
+- `fromAmt`: The amount of `fromCoin` you want to swap.
+- `accountAdd`: The account address for the transaction.
+
+#### `Example Usage:`
+
+```javascript
+const transactionData = await TB_SDK.getSwapTxnData(fromCoin, toCoin, network, fromAmt, accountAdd);
+```
+
+### `getCrossChainTxnData Function`
+The `getCrossChainTxnData` function is used to obtain transaction data for cross-chain transactions. It accepts the following parameters:
+
+- `fromCoin`: The token you want to transfer from.
+- `toCoin`: The token you want to transfer to.
+- `srcNetwork`: The source network for the transaction.
+- `destNetwork`: The destination network for the transaction.
+- `fromAmt`: The amount of fromCoin you want to transfer.
+- `provider`: The provider for the transaction.
+
+
+#### `Example Usage`:
+
+``` javascript
+const crossChainTransactionData = await TB_SDK.getCrossChainTxnData(fromCoin, toCoin, srcNetwork, destNetwork, fromAmt, provider);
+```
+
+### `getAllTokens Function`
+The `getAllTokens` function is a simple utility function that returns a list of all available tokens.
+
+### `Example Usage:`
+```javascript
+const tokenList = TB_SDK.getAllTokens();
+```
+
+`To get all the available tokens available for swidge or Cross Chain transactions`
+
+
+Please make sure to install the required dependencies and configure your environment before using these functions. Ensure that you handle any potential errors that may occur during their execution.
+
+
+
+#### ```Feel free to customize this documentation further, including any specific usage instructions or additional details relevant to your project.```
 
 
 ## License
